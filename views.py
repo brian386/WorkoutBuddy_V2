@@ -1,9 +1,9 @@
 from models import *
 from app import app
-from flask import render_template, redirect, url_for, request, flash
+from flask import render_template, redirect, url_for, request, flash, Response
 from flask_login import login_required, login_user, logout_user
 from forms import *
-from app import db
+from app import db, generate_frames
 
 #landing page
 @app.route("/")
@@ -77,3 +77,8 @@ def register():
         flash('Thanks for registering')
         return redirect(url_for('login'))
     return render_template('register.html', form=RegisterForm())
+
+@app.route('/video/<string:exercise>')
+def video(exercise):
+    return Response(generate_frames(exercise), mimetype='multipart/x-mixed-replace; boundary=frame')
+
