@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+{% block content %} 
+{% for exercise_list in exercise_lists %}
+<!-- Row 1 (Fits 3 Cards)-->
+<div class="row">
+    {% for exercise in exercise_list %}
+    <!--Card 1 -->
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+            <img src="{{exercise.icon}}">
+            </div>
+            <div class="card-content">
+            <span class="card-title" style="font-family: Raleway; font-weight: 1000; color: #B3358B">{{exercise.id}}</span>
+            <p>{{exercise.description}}</p>
+            </div>
+            <div class="card-action">
+            <a href="/progress/{{exercise.id}}">Begin Workout</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}

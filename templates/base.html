@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Workout Buddy!</title>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='materialize.min.css')}}"  media="screen,projection"/>
+        <link rel="stylesheet" href= "{{ url_for('static', filename='style.css')}}" >
+        <!-- Import Raleyway Font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav>
+            <div class="purple accent-1 nav-wrapper">
+            <div class="brand-logo">
+                <!--<img src="static/WorkoutBuddyIcon.svg" width="40px" height="40px">-->
+                <a href="/"  style="padding-left: 40px; font-family: Raleway; font-weight: 1000; color: #B3358B"> Workout Buddy </a>
+                </div>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/exercises"  class="z-depth-0 purple lighten-2 btn" style="font-family: Raleway; font-weight: 700;">Exercises</a></li>
+                <li><a href="#" class="z-depth-0 purple lighten-2 btn" style="font-family: Raleway; font-weight: 700;">Workout</a></li>
+                <li><a href="#" class="z-depth-0 purple lighten-2 btn" style="font-family: Raleway; font-weight: 700;">Profile</a></li>
+                {% if current_user.is_authenticated %}
+                <li><a href="/logout" class="z-depth-0 purple lighten-2 btn" style="font-family: Raleway; font-weight: 700;">Logout</a></li>
+                {% else %} 
+                <li><a href="/login" class="z-depth-0 purple lighten-2 btn" style="font-family: Raleway; font-weight: 700;">Login</a></li>
+                {% endif %}
+            </ul>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
