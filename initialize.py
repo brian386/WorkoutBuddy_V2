@@ -3,15 +3,10 @@ from models import Exercise
 
 exercises = [['dumbbell', 'An exercise'],
 ['pushup', 'An exercise'],
-['plank', 'An exercise'],
 ['squat', 'An exercise'],
 ['lunges', 'An exercise'],
 ['hip thrust', 'An exercise'],
-['superman', 'An exercise'],
-['burpees', 'An exercise'],
-['mountain climber', 'An exercise'],
 ['sit up', 'An exercise'],
-['side to side', 'An exercise']
 ]
 
 for i in range(len(exercises)):
