@@ -8,7 +8,7 @@ class pose_detector():
 
         self.drawing_module = mp.solutions.drawing_utils
         self.mp_pose= mp.solutions.pose
-        self.pose = self.mp_pose.Pose()
+        self.pose = self.mp_pose.Pose(min_detection_confidence = 0.7, min_tracking_confidence = 0.7)
         self.lm_names = ['nose', 'left_eye_inner', 
         'left_eye', 'left_eye_outer', 'right_eye_inner','right_eye', 'right_eye_outer', 'left_ear', 
         'right_ear', 'mouth_left', 'mouth_right', 'left_shoulder', 'right_shoulder', 'left_elbow', 
