@@ -57,7 +57,7 @@ def count_push_ups(cur_session, detector, lmList):
         left_elbow_angle = detector.calc_angle(lmList['left_shoulder'], lmList['left_elbow'], lmList['left_wrist'])
         right_elbow_angle = detector.calc_angle(lmList['right_shoulder'], lmList['right_elbow'], lmList['right_wrist'])
 
-        if cur_session['up'] and (left_elbow_angle <100 and right_elbow_angle < 100):
+        if cur_session['up'] and (left_elbow_angle <90 and right_elbow_angle < 90):
             cur_session['reps'] += 0.5
             cur_session['up'] = False
         elif not cur_session['up'] and (left_elbow_angle > 160 and right_elbow_angle > 160): 
