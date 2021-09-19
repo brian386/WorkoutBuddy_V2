@@ -1,4 +1,3 @@
 venv/
 ENV_DIR/
 __pycache__/
-*.sqlite3
